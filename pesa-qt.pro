@@ -5,6 +5,9 @@ INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
+#CONFIG += qt
+#QT += gui
+#QT += widgets
 
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
@@ -15,7 +18,19 @@ CONFIG += thread
 # Dependency library locations can be customized with:
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
-
+windows:{
+BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
+BOOST_INCLUDE_PATH=C:/deps/boost
+BOOST_LIB_PATH=C:/deps/boost/stage/lib
+BDB_INCLUDE_PATH=C:/deps/db/build_unix
+BDB_LIB_PATH=C:/deps/db/build_unix
+OPENSSL_INCLUDE_PATH=C:/deps/openssl/include
+OPENSSL_LIB_PATH=C:/deps/openssl
+MINIUPNPC_INCLUDE_PATH=C:/deps/
+MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
+QRENCODE_INCLUDE_PATH=C:/deps/qrencode
+QRENCODE_LIB_PATH=C:/deps/qrencode/.libs
+}
 OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build

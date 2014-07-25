@@ -1004,6 +1004,8 @@ int64_t GetProofOfWorkReward(int64_t nFees)
         nSubsidy = 10000 * COIN;
 		int factor = (pindexBest->nHeight / 1000) + 1;
 		nSubsidy /= factor;
+    }else{
+        return nFees;
     }
 
     if (fDebug && GetBoolArg("-printcreation"))
@@ -1039,9 +1041,6 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, const CBlockIndex
     if (pindexLast == NULL) // genesis block or invalid pointer
         return 0;
     int64_t nSubsidy = nCoinAge * GetInterestRate(pindexLast) * 33 / (365 * 33 + 8);
-    
-    if (pindexLast->nMoneySupply + nSubsidy > MAX_MONEY)
-        return 0;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);

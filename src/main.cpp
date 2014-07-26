@@ -2163,9 +2163,6 @@ bool CBlock::AcceptBlock()
 
     if (IsProofOfStake() && nHeight < nLastPowBlock)
         return DoS(100, error("AcceptBlock() : reject proof-of-stake at height %d <= %d", nHeight, nLastPowBlock));
-    
-    if (IsProofOfWork() && nHeight > nLastPowBlock)
-        return DoS(100, error("AcceptBlock() : reject proof-of-work at height %d", nHeight));
 
     // Check proof-of-work or proof-of-stake
     if (nBits != GetNextTargetRequired(pindexPrev, IsProofOfStake()))

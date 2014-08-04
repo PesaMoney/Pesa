@@ -27,3 +27,4 @@ build
 Makefile.*
 object_script.*
 release/
+Thumbs.db

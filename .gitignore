@@ -1,7 +1,7 @@
 src/*.exe
 src/pesa
 src/pesad
-src/test_guerilla
+src/test_keycoin
 src/build.h
 pesa-qt
 .*.swp
@@ -11,7 +11,7 @@ pesa-qt
 *.orig
 *.o
 *.patch
-.guerilla
+.keycoin
 #compilation and Qt preprocessor part
 *.qm
 Makefile

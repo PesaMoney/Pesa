@@ -1,6 +1,10 @@
 src/*.exe
 src/pesa
 src/pesad
+<<<<<<< HEAD
+=======
+src/test_keycoin
+>>>>>>> FETCH_HEAD
 src/build.h
 pesa-qt
 .*.swp
@@ -10,7 +14,7 @@ pesa-qt
 *.orig
 *.o
 *.patch
-.guerilla
+.keycoin
 #compilation and Qt preprocessor part
 *.qm
 #resources cpp

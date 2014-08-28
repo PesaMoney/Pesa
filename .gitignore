@@ -1,7 +1,6 @@
 src/*.exe
 src/pesa
 src/pesad
-src/test_guerilla
 src/build.h
 pesa-qt
 .*.swp
@@ -14,7 +13,6 @@ pesa-qt
 .guerilla
 #compilation and Qt preprocessor part
 *.qm
-Makefile
 #resources cpp
 qrc_*.cpp
 #qt creator
@@ -23,8 +21,4 @@ qrc_*.cpp
 .DS_Store
 build
 
-!src/leveldb/Makefile
-Makefile.*
-object_script.*
-release/
 Thumbs.db
